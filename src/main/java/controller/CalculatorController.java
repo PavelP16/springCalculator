@@ -1,12 +1,13 @@
 package controller;
 
+import org.springframework.stereotype.Service;
 import service.CalculatorService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
+@Service
 @RestController
 @RequestMapping("/calculator")
 public class CalculatorController {
@@ -69,6 +70,7 @@ public class CalculatorController {
         }
         if (num2 == 0) {
             return "Нельзя делить на 0";
+
 
         }
         int result = calculatorService.getDivision(num1, num2);
